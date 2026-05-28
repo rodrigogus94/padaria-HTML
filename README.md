@@ -29,6 +29,7 @@ Este guia contém os comandos essenciais do Git que todo iniciante precisa conhe
 ## 🔧 Configuração Inicial
 # Configure seu nome e email (OBRIGATÓRIO)
 git config --global user.name "Seu Nome"
+
 git config --global user.email "seu@email.com"
 
 # Verifique as configurações
