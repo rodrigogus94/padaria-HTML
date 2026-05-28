@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<!-- Documento HTML5 da landing page da Panificadora do João -->
+<html lang="pt-BR">
+<head>
+    <!-- Codificação de caracteres (acentos e cedilha em português) -->
+    <meta charset="UTF-8">
+    <!-- Viewport: layout responsivo em celulares e tablets -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <!-- Resumo da página para buscadores (Google, Bing, etc.) -->
+    <meta name="description" content="Panificadora do João - Pães artesanais fresquinhos todos os dias. Peça online e retire em até 2 horas!">
+    <!-- Texto exibido na aba do navegador -->
+    <title>Panificadora do João | Pães Artesanais</title>
+    <!-- Folha de estilos principal do projeto -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Pré-conexão com servidores do Google Fonts (carrega a fonte mais rápido) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Família tipográfica Poppins (pesos 300 a 700) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script defer src="tts.js"></script>
+</head>
+<body>
+
+    <!-- ========== CABEÇALHO: marca + menu fixo no topo ========== -->
+    <header>
+        <!-- Container limita largura e alinha logo com navegação -->
+        <div class="container">
+            <!-- Bloco da identidade visual (nome e slogan) -->
+            <div class="logo">
+                <h1>Panificadora do João</h1>
+                <p>Pães artesanais desde 1990</p>
+            </div>
+            <!-- Links âncora para as seções da mesma página -->
+            <nav aria-label="Navegação principal">
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#como-funciona">Como funciona</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li class="nav-actions">
+                        <button
+                            id="ttsToggle"
+                            class="btn-ghost tts-btn"
+                            type="button"
+                            aria-pressed="false"
+                            aria-label="Ler o conteúdo da página em voz alta"
+                            title="Ler em voz alta"
+                        >
+                            <svg class="tts-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+                                <!-- Ícone de áudio (alto-falante) -->
+                                <path fill="currentColor" d="M3 10v4h4l5 4V6L7 10H3zm13.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                            </svg>
+                        </button>
+                        <button
+                            id="ttsStop"
+                            class="btn-ghost tts-btn"
+                            type="button"
+                            aria-label="Parar leitura em voz alta"
+                            title="Parar leitura"
+                            hidden
+                        >
+                            <svg class="tts-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+                                <!-- Ícone stop -->
+                                <path fill="currentColor" d="M6 6h12v12H6z"/>
+                            </svg>
+                        </button>
+                        <!-- Checkbox oculto: o CSS alterna o tema com :has(:checked), sem JavaScript -->
+                        <input
+                            type="checkbox"
+                            id="themeToggle"
+                            class="theme-toggle-input visually-hidden"
+                            aria-label="Ativar modo acessível (alto contraste)"
+                        >
+                        <label for="themeToggle" class="btn-ghost theme-toggle-btn" title="Modo acessível (alto contraste)">
+                            <svg class="theme-toggle-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+                                <path fill="currentColor" d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z"/>
+                            </svg>
+                        </label>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ========== CONTEÚDO PRINCIPAL (uma única main por página) ========== -->
+    <main>
+
+        <!-- ========== HERO: primeira impressão e chamada para ação ========== -->
+        <section id="home" class="hero">
+            <div class="container">
+                <!-- Coluna esquerda: título, texto e botões -->
+                <div class="hero-content">
+                    <h2>Pães artesanais fresquinhos <span>entregues no seu bairro</span></h2>
+                    <p>Feitos com amor e ingredientes selecionados. Peça online e retire em até <strong>2 horas</strong> ou receba em casa!</p>
+                    <div class="hero-audio" aria-label="Áudio de boas-vindas">
+                        <audio controls preload="none">
+                            <source src="assets/audio/boas-vindas.mp3" type="audio/mpeg">
+                            Seu navegador não suporta áudio.
+                        </audio>
+                    </div>
+                    <div class="hero-buttons">
+                        <button class="btn-primary" type="button">Fazer Pedido</button>
+                        <button class="btn-secondary" type="button">WhatsApp</button>
+                    </div>
+                </div>
+                <!-- Coluna direita: foto principal (arquivo local em assets/) -->
+                <div class="hero-image">
+                    <img src="assets/produtos/fotos/hero-paes.jpg" alt="Variedade de pães artesanais frescos">
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== PRODUTOS: grade de cards com foto, preço e botão ========== -->
+        <section id="produtos" class="produtos">
+            <div class="container">
+                <!-- Título e subtítulo centralizados da seção -->
+                <div class="section-header">
+                    <h2>Nossos Pães</h2>
+                    <p>Feitos diariamente com ingredientes naturais</p>
+                </div>
+                <!-- Grid responsivo: cada .produto-card é um item do catálogo -->
+                <div class="produtos-grid">
+
+                    <!-- Card 1 — Pão Francês -->
+                    <article class="produto-card">
+                        <img src="assets/produtos/fotos/pao-frances.jpg" alt="Pão francês artesanal com crosta dourada" width="300" height="200" loading="lazy">
+                        <h3>Pão Francês</h3>
+                        <p class="descricao">Tradicional pão francês com casca crocante e miolo macio. Perfeito para o café da manhã.</p>
+                        <p class="preco">R$ 12,90</p>
+                        <button type="button">Adicionar ao carrinho</button>
+                    </article>
+
+                    <!-- Card 2 — Pão Integral -->
+                    <article class="produto-card">
+                        <img src="assets/produtos/fotos/pao-integral.jpg" alt="Pão integral com grãos e sementes" width="300" height="200" loading="lazy">
+                        <h3>Pão Integral</h3>
+                        <p class="descricao">Pão 100% integral rico em fibras, com sementes de girassol e linhaça.</p>
+                        <p class="preco">R$ 16,90</p>
+                        <button type="button">Adicionar ao carrinho</button>
+                    </article>
+
+                    <!-- Card 3 — Pão de Queijo -->
+                    <article class="produto-card">
+                        <img src="assets/produtos/fotos/pao-de-queijo.jpg" alt="Pão de queijo assados e dourados" width="300" height="200" loading="lazy">
+                        <h3>Pão de Queijo</h3>
+                        <p class="descricao">Delicioso pão de queijo mineiro, crocante por fora e macio por dentro.</p>
+                        <p class="preco">R$ 8,90</p>
+                        <button type="button">Adicionar ao carrinho</button>
+                    </article>
+
+                    <!-- Card 4 — Pão Doce -->
+                    <article class="produto-card">
+                        <img src="assets/produtos/fotos/pao-doce.jpg" alt="Pão doce macio tipo brioche" width="300" height="200" loading="lazy">
+                        <h3>Pão Doce</h3>
+                        <p class="descricao">Pão macio e levemente adocicado, ideal para o lanche da tarde com café.</p>
+                        <p class="preco">R$ 10,90</p>
+                        <button type="button">Adicionar ao carrinho</button>
+                    </article>
+
+                    <!-- Card 5 — Baguete -->
+                    <article class="produto-card">
+                        <img src="assets/produtos/fotos/baguete.jpg" alt="Baguete francesa tradicional" width="300" height="200" loading="lazy">
+                        <h3>Baguete</h3>
+                        <p class="descricao">Baguete francesa com casca estaladiça e fermentação natural.</p>
+                        <p class="preco">R$ 14,90</p>
+                        <button type="button">Adicionar ao carrinho</button>
+                    </article>
+
+                    <!-- Card 6 — Pão Australiano -->
+                    <article class="produto-card">
+                        <img src="assets/produtos/fotos/pao-australiano.jpg" alt="Pão escuro tipo australiano" width="300" height="200" loading="lazy">
+                        <h3>Pão Australiano</h3>
+                        <p class="descricao">Pão adocicado com mel, macio e saboroso. Sucesso garantido!</p>
+                        <p class="preco">R$ 18,90</p>
+                        <button type="button">Adicionar ao carrinho</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== COMO FUNCIONA: fluxo do pedido em 4 passos ========== -->
+        <section id="como-funciona" class="como-funciona">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Como funciona?</h2>
+                    <p>Simples, rápido e prático</p>
+                </div>
+                <div class="steps">
+                    <!-- Passo 1 -->
+                    <div class="step">
+                        <div class="step-icon" aria-hidden="true">1</div>
+                        <h3>Escolha</h3>
+                        <p>Navegue pelo catálogo e escolha seus pães favoritos</p>
+                    </div>
+                    <!-- Passo 2 -->
+                    <div class="step">
+                        <div class="step-icon" aria-hidden="true">2</div>
+                        <h3>Peça</h3>
+                        <p>Adicione ao carrinho e finalize seu pedido</p>
+                    </div>
+                    <!-- Passo 3 -->
+                    <div class="step">
+                        <div class="step-icon" aria-hidden="true">3</div>
+                        <h3>Retire</h3>
+                        <p>Retire em até 2h ou agende a entrega</p>
+                    </div>
+                    <!-- Passo 4 -->
+                    <div class="step">
+                        <div class="step-icon" aria-hidden="true">4</div>
+                        <h3>Aproveite</h3>
+                        <p>Seus pães fresquinhos esperando por você</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== DIFERENCIAIS: três argumentos de venda ========== -->
+        <section class="diferenciais" aria-labelledby="diferenciais-titulo">
+            <div class="container">
+                <!-- Card: ingredientes -->
+                <div class="diferencial-card">
+                    <h3 id="diferenciais-titulo">Ingredientes Naturais</h3>
+                    <p>Sem conservantes, corantes ou aditivos artificiais</p>
+                </div>
+                <!-- Card: prazo de retirada -->
+                <div class="diferencial-card">
+                    <h3>Pronto em 2h</h3>
+                    <p>Pedidos prontos para retirada em até 2 horas</p>
+                </div>
+                <!-- Card: transparência nas fotos -->
+                <div class="diferencial-card">
+                    <h3>Fotos Reais</h3>
+                    <p>O que você vê é o que você recebe</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CONTATO: dados da loja + formulário ========== -->
+        <section id="contato" class="contato">
+            <div class="container">
+                <!-- Lista de telefone, WhatsApp, e-mail e endereço -->
+                <div class="contato-info">
+                    <h2>Fale Conosco</h2>
+                    <p>Telefone: (11) 99999-9999</p>
+                    <p>WhatsApp: (11) 98888-8888</p>
+                    <p>Email: contato@panificadorajoao.com.br</p>
+                    <p>Endereço: Rua dos Pães, 123 - Bairro do Limoeiro</p>
+                </div>
+                <!-- Formulário estático (envio real pode ser feito depois com JS ou backend) -->
+                <div class="contato-form">
+                    <h3>Envie uma mensagem</h3>
+                    <form id="formContato" action="#" method="post">
+                        <label class="visually-hidden" for="nomeContato">Seu nome</label>
+                        <input type="text" placeholder="Seu nome" id="nomeContato" name="nome" autocomplete="name" required>
+                        <label class="visually-hidden" for="emailContato">Seu e-mail</label>
+                        <input type="email" placeholder="Seu e-mail" id="emailContato" name="email" autocomplete="email" required>
+                        <label class="visually-hidden" for="mensagemContato">Sua mensagem</label>
+                        <textarea placeholder="Sua mensagem" id="mensagemContato" name="mensagem" rows="4" required></textarea>
+                        <button type="submit" class="btn-primary">Enviar mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== RODAPÉ: copyright e frase de marca ========== -->
+    <footer>
+        <div class="container">
+            <p>Panificadora do João - Todos os direitos reservados</p>
+            <p>Pães artesanais com amor, tradição e qualidade</p>
+        </div>
+    </footer>
+
+</body>
+</html>

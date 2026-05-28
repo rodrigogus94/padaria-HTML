@@ -1,0 +1,646 @@
+/* =============================================================================
+   PANIFICADORA DO JOÃO — Folha de estilos principal
+
+   Paleta (aconchegante e “de panificadora”):
+   - Marrom chocolate (estrutura: header/footer/botões)
+   - Creme de pão (fundo)
+   - Caramelo/mel (destaques e preços)
+   - Cinza quente (textos secundários)
+   ============================================================================= */
+
+/* =============================================================================
+   VARIÁVEIS DE COR — ajuste aqui para mudar o site todo
+   ============================================================================= */
+:root {
+    --bg: #fff9f3;              /* creme quente (fundo geral) */
+    --surface: #ffffff;         /* cards e formulários */
+    --surface-warm: #fff4e6;    /* destaques suaves */
+    --text: #3a2c26;            /* marrom suave (legível, não “pesado”) */
+    --muted: #7a665c;           /* texto secundário acolhedor */
+    --brand-900: #5a3f34;       /* cacau quente (header/footer) */
+    --brand-800: #6f5245;       /* marrom claro para gradientes */
+    --accent: #e5a04a;          /* mel dourado (destaques) */
+    --accent-hover: #f0b35c;    /* hover mais claro */
+    --accent-soft: #f6ddb0;     /* realces e foco */
+    --hero-from: #fffaf4;
+    --hero-to: #f8e8d2;
+    --section-warm: #faf0e3;    /* fundo “Como funciona” */
+    --border-subtle: rgba(90, 63, 52, 0.08);
+    --shadow: rgba(90, 63, 52, 0.08);
+    --shadow-strong: rgba(90, 63, 52, 0.14);
+    --on-brand: #fffaf6;        /* texto sobre marrom */
+}
+
+/* =============================================================================
+   TEMA ACESSÍVEL — alto contraste (sem JS: checkbox #themeToggle + :has)
+   ============================================================================= */
+:root:has(#themeToggle:checked) {
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --surface-warm: #ffffff;
+    --text: #0b0b0c;
+    --muted: #222327;
+    --brand-900: #0b0b0c;
+    --brand-800: #121317;
+    /* Azul é geralmente mais seguro para diferentes tipos de daltonismo */
+    --accent: #0b5fff;
+    --accent-soft: #bcd7ff;
+    --shadow: rgba(0, 0, 0, 0.18);
+    --shadow-strong: rgba(0, 0, 0, 0.26);
+}
+
+/* --- Reset global: remove espaços padrão do navegador --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* padding e border entram na largura total */
+}
+
+/* --- Corpo da página: tipografia e cor de fundo geral --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--bg);
+}
+
+/* --- Rótulos só para leitores de tela (acessibilidade do formulário) --- */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* =============================================================================
+   CONTAINER — largura máxima e margens laterais em todas as seções
+   ============================================================================= */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =============================================================================
+   CABEÇALHO (header) — barra fixa no topo ao rolar
+   ============================================================================= */
+header {
+    background: linear-gradient(135deg, var(--brand-900) 0%, var(--brand-800) 100%);
+    color: var(--on-brand);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 8px 22px var(--shadow);
+}
+
+/* Flex: logo à esquerda, menu à direita */
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Nome da padaria no cabeçalho */
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Slogan abaixo do nome */
+.logo p {
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+/* =============================================================================
+   NAVEGAÇÃO — links do menu principal
+   ============================================================================= */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav ul li a {
+    color: var(--on-brand);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--accent-soft);
+}
+
+/* Botão do tema no header (simples e discreto) */
+.btn-ghost {
+    background: transparent;
+    color: var(--on-brand);
+    border: 1px solid rgba(255, 250, 246, 0.45);
+    padding: 9px 14px;
+    border-radius: 999px;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+/* Apenas ícone: área de toque maior e centro alinhado */
+.theme-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.theme-toggle-icon {
+    display: block;
+}
+
+.tts-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.tts-icon {
+    display: block;
+}
+
+.theme-toggle-input:checked + .theme-toggle-btn {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: #fff;
+}
+
+/* O input fica “invisível”; então desenhamos o foco no label (botão) */
+.theme-toggle-input:focus-visible + .theme-toggle-btn {
+    outline: 3px solid var(--accent-soft);
+    outline-offset: 3px;
+}
+
+.btn-ghost[disabled] {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+/* Player de áudio no hero */
+.hero-audio {
+    margin: 12px 0 18px;
+}
+
+.hero-audio audio {
+    width: min(420px, 100%);
+}
+
+.btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-1px);
+}
+
+.btn-ghost:focus-visible,
+nav ul li a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--accent-soft);
+    outline-offset: 3px;
+}
+
+/* No tema acessível, dá mais “borda” e evita depender só de cor */
+:root:has(#themeToggle:checked) .produto-card,
+:root:has(#themeToggle:checked) .diferencial-card {
+    border: 2px solid #0b0b0c;
+    box-shadow: none;
+}
+
+:root:has(#themeToggle:checked) .hero {
+    background: #ffffff;
+}
+
+:root:has(#themeToggle:checked) header {
+    background: #0b0b0c;
+}
+
+:root:has(#themeToggle:checked) nav ul li a,
+:root:has(#themeToggle:checked) .btn-ghost {
+    color: #ffffff;
+}
+
+/* =============================================================================
+   HERO — seção inicial (#home)
+   ============================================================================= */
+.hero {
+    padding: 60px 0;
+    background: linear-gradient(135deg, var(--hero-from) 0%, var(--hero-to) 100%);
+}
+
+/* Duas colunas: texto + imagem */
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 280px;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--brand-900);
+}
+
+/* Parte destacada do título (cor mais clara) */
+.hero-content h2 span {
+    color: var(--accent);
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: var(--muted);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Coluna da imagem principal */
+.hero-image {
+    flex: 1;
+    text-align: center;
+    min-width: 280px;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 30px;
+    box-shadow: 0 20px 35px var(--shadow-strong);
+}
+
+/* =============================================================================
+   BOTÕES — classes reutilizadas no hero e no formulário
+   ============================================================================= */
+.btn-primary {
+    background: var(--brand-900);
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background: var(--accent-hover);
+    transform: scale(1.02);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--brand-900);
+    padding: 12px 30px;
+    border: 2px solid var(--brand-900);
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background: var(--brand-900);
+    color: #fff;
+}
+
+/* =============================================================================
+   PRODUTOS — catálogo em grade (#produtos)
+   ============================================================================= */
+.produtos {
+    padding: 60px 0;
+}
+
+/* Título centralizado reutilizado em várias seções */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    color: var(--brand-900);
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    color: var(--muted);
+}
+
+/* Grid: colunas automáticas conforme largura da tela */
+.produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Card de um produto */
+.produto-card {
+    background: var(--surface);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 22px var(--shadow);
+    transition: all 0.3s;
+    text-align: center;
+    padding-bottom: 20px;
+    border: 1px solid var(--border-subtle);
+}
+
+.produto-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 42px var(--shadow-strong);
+}
+
+/* Fotos locais em assets/produtos/fotos/ */
+.produto-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.produto-card h3 {
+    margin: 15px 0 5px;
+    color: var(--brand-900);
+}
+
+.produto-card .preco {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 10px 0;
+}
+
+.produto-card .descricao {
+    font-size: 0.85rem;
+    color: var(--muted);
+    padding: 0 15px;
+    margin-bottom: 15px;
+}
+
+.produto-card button {
+    background: var(--brand-900);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.produto-card button:hover {
+    background: var(--accent-hover);
+}
+
+/* =============================================================================
+   COMO FUNCIONA — passos numerados (#como-funciona)
+   ============================================================================= */
+.como-funciona {
+    background: var(--section-warm);
+    padding: 60px 0;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.step {
+    flex: 1;
+    text-align: center;
+    min-width: 200px;
+}
+
+/* Círculo com número do passo */
+.step-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--brand-900);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: var(--accent-soft);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.step h3 {
+    margin-bottom: 10px;
+    color: var(--brand-900);
+}
+
+.step p {
+    color: var(--muted);
+}
+
+/* =============================================================================
+   DIFERENCIAIS — três cards em linha
+   ============================================================================= */
+.diferenciais {
+    padding: 60px 0;
+    background: var(--bg);
+}
+
+.diferenciais .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.diferencial-card {
+    flex: 1;
+    text-align: center;
+    padding: 30px 20px;
+    background: var(--surface-warm);
+    border-radius: 20px;
+    transition: all 0.3s;
+    min-width: 200px;
+    border: 1px solid var(--border-subtle);
+}
+
+.diferencial-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 34px var(--shadow-strong);
+}
+
+.diferencial-card h3 {
+    color: var(--brand-900);
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.diferencial-card p {
+    color: var(--muted);
+}
+
+/* =============================================================================
+   CONTATO — fundo escuro, duas colunas (#contato)
+   ============================================================================= */
+.contato {
+    padding: 60px 0;
+    background: linear-gradient(135deg, var(--brand-900) 0%, var(--brand-800) 100%);
+    color: #fff;
+}
+
+.contato .container {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.contato-info,
+.contato-form {
+    flex: 1;
+    min-width: 280px;
+}
+
+.contato-info h2 {
+    margin-bottom: 20px;
+}
+
+.contato-info p {
+    margin-bottom: 15px;
+}
+
+.contato-form h3 {
+    margin-bottom: 15px;
+}
+
+/* Inputs e textarea do formulário */
+.contato-form input,
+.contato-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    background: #fff;
+    color: var(--text);
+}
+
+.contato-form button {
+    width: 100%;
+}
+
+/* =============================================================================
+   RODAPÉ (footer)
+   ============================================================================= */
+footer {
+    background: var(--brand-900);
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+}
+
+footer p {
+    margin: 5px 0;
+    opacity: 0.7;
+}
+
+/* =============================================================================
+   RESPONSIVIDADE — ajustes para tablet e celular
+   ============================================================================= */
+
+/* Até 768px: layout em coluna em várias seções */
+@media (max-width: 768px) {
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .steps {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .diferenciais .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contato .container {
+        flex-direction: column;
+    }
+
+    /* Menu pode quebrar linha abaixo do logo */
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* Até 480px: tipografia e grade mais compactas */
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.4rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .produtos-grid {
+        grid-template-columns: 1fr;
+    }
+}
