@@ -1,13 +1,41 @@
+# Pão & Bytes — Padaria Artesanal
+
+Site estático em HTML e Bootstrap 5 para o projeto **padaria-HTML**, com práticas progressivas e uma página final pronta para uso.
+
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
+[![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/)
+
+## Como usar
+
+1. Abra **`index.html`** no navegador — página completa com menu, setores, cardápio, sobre e contato.
+2. Para montar passo a passo, siga os ficheiros **`PRATICA-1.html`** a **`PRATICA-5.html`** nesta ordem:
+   - **1** — estrutura base e hero
+   - **3** — barra de navegação (início do `<body>`)
+   - **2** — grelha dos três setores (dentro do `container`)
+   - **4** — card de produto
+   - **5** — formulário de contacto
+
+Não é necessário servidor local: basta abrir o ficheiro HTML. O formulário usa `action="#"` e `method="post"` apenas como exemplo; para enviar mensagens de verdade seria preciso um backend ou serviço de formulários.
+
+## Estrutura do repositório
+
+| Ficheiro | Descrição |
+|----------|-----------|
+| `index.html` | Site completo |
+| `PRATICA-1.html` | Base + hero (corrigido: viewport e Bootstrap JS) |
+| `PRATICA-2.html` | Grelha de setores |
+| `PRATICA-3.html` | Navbar |
+| `PRATICA-4.html` | Card de produto |
+| `PRATICA-5.html` | Formulário com validação HTML |
+
+---
+
 # Guia Rápido de Git para Iniciantes
 
-[![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+> Comandos essenciais para versionar este e outros projetos.
 
-> **"O conhecimento de Git é essencial para qualquer desenvolvedor moderno"**
-
-Este guia contém os comandos essenciais do Git que todo iniciante precisa conhecer para começar a versionar seus projetos com confiança.
-
-## 📋 Índice
+## Índice Git
 
 - [⚡ Comandos Rápidos](#-comandos-rápidos)
 - [🔧 Configuração Inicial](#-configuração-inicial)
@@ -78,15 +106,16 @@ git clone git@github.com:usuario/repositorio.git
 git clone -b main --single-branch https://github.com/usuario/repositorio.git
 
 
-📝 Trabalhando com Arquivos
+## 📝 Trabalhando com Arquivos
 
-Comandos básicos
+### Comandos básicos
 
+```bash
 # Ver o que mudou
 git status
 
 # Adicionar arquivos específicos
-git arquivo1.js arquivo2.css
+git add arquivo1.js arquivo2.css
 
 # Adicionar todos os arquivos
 git add .
@@ -102,12 +131,14 @@ git rm --cached arquivo.txt
 
 # Renomear arquivo
 git mv antigo.js novo.js
+```
 
+### Entendendo os estados
 
-Entendendo os estados
-
+```
 Working Directory → [git add] → Staging Area → [git commit] → Repository
      (arquivos)                    (prontos)                    (salvos)
+```
 
 
 ## 💾 Commits

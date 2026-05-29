@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<!-- =============================================================================
+     INDEX.HTML — Site completo "Pão & Bytes"
+     Montagem das práticas na ordem: 1 → 3 → 2 → 4 → 5 (+ seção Sobre no index)
+     ============================================================================= -->
+<html lang="pt-BR">
+<!-- lang="pt-BR": idioma da página para leitores de tela e motores de busca (PRATICA-1) -->
+
+<head>
+    <!-- PRATICA-1: cabeçalho base e importação do Bootstrap -->
+    <meta charset="UTF-8">
+    <!-- charset UTF-8: suporta acentos e caracteres especiais em português -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- viewport: adapta o layout à largura do celular/tablet/desktop -->
+
+    <title>Pão & Bytes - Padaria Artesanal</title>
+    <!-- title: texto que aparece na aba do navegador -->
+
+    <!-- link Bootstrap CSS via CDN: folha de estilos pronta do framework -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body class="bg-light">
+    <!-- bg-light: fundo cinza claro em todo o body (PRATICA-1) -->
+
+    <!-- =========================================================================
+         PRATICA-3: Barra de navegação (cole no início do <body>)
+         ========================================================================= -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+        <!-- navbar: componente de menu | navbar-expand-lg: expande links em telas ≥992px -->
+        <!-- navbar-dark: texto/clique claros no fundo escuro | bg-dark: fundo preto/cinza escuro -->
+        <!-- shadow: sombra suave abaixo da barra -->
+
+        <div class="container-fluid">
+            <!-- container-fluid: largura 100% com padding lateral (menu ocupa a tela toda) -->
+
+            <a class="navbar-brand fw-bold text-primary" href="#inicio">
+                <!-- navbar-brand: estilo de logotipo/marca no menu -->
+                <!-- fw-bold: font-weight bold (negrito) | text-primary: cor azul tema Bootstrap -->
+                Pão & Bytes</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPadaria"
+                aria-controls="menuPadaria" aria-expanded="false" aria-label="Abrir menu">
+                <!-- navbar-toggler: botão hambúrguer visível só em telas pequenas -->
+                <!-- data-bs-toggle="collapse": ativa o recolhimento (precisa do JS do Bootstrap) -->
+                <!-- data-bs-target="#menuPadaria": id do painel que abre/fecha -->
+                <span class="navbar-toggler-icon"></span>
+                <!-- navbar-toggler-icon: ícone das três barras do menu mobile -->
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuPadaria">
+                <!-- collapse navbar-collapse: esconde links no mobile até clicar no toggler -->
+                <!-- id="menuPadaria": alvo do data-bs-target do botão hambúrguer -->
+
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <!-- navbar-nav: lista estilizada como itens de navegação -->
+                    <!-- ms-auto: margin-start auto — empurra o menu para a direita -->
+                    <!-- mb-2: margin-bottom em mobile | mb-lg-0: remove margem em telas large+ -->
+
+                    <li class="nav-item">
+                        <!-- nav-item: um item da lista do menu -->
+                        <a class="nav-link active" href="#inicio">Início</a>
+                        <!-- nav-link: estilo de link do navbar | active: destaca página/seção atual -->
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#cardapio">Cardápio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Nós</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link text-primary" href="#contato">Contato</a>
+                        <!-- text-primary no último link: destaque visual (cor azul) -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- main: conteúdo principal da página (agrupa seções para acessibilidade) -->
+
+        <!-- =========================================================================
+             PRATICA-1: Hero (título, subtítulo e botão de pedido)
+             ========================================================================= -->
+        <section id="inicio" class="container text-center my-5">
+            <!-- id="inicio": âncora para o link "Início" do menu (PRATICA-3) -->
+            <!-- container: centraliza conteúdo com largura máxima responsiva -->
+            <!-- text-center: alinha texto e elementos inline ao centro -->
+            <!-- my-5: margin vertical (topo e base) tamanho 5 na escala Bootstrap -->
+
+            <h1 class="display-4 text-primary fw-bold">Pão & Bytes</h1>
+            <!-- display-4: título grande de destaque (tipografia hero) -->
+            <!-- text-primary: cor azul do tema | fw-bold: negrito -->
+
+            <p class="lead text-muted">O ponto de encontro entre o trigo e o código.</p>
+            <!-- lead: parágrafo introdutório maior que o texto normal -->
+            <!-- text-muted: cinza suave (texto secundário) -->
+
+            <a href="#cardapio" class="btn btn-primary btn-lg rounded-pill shadow">Fazer Pedido Online</a>
+            <!-- btn: base de botão Bootstrap | btn-primary: botão azul preenchido -->
+            <!-- btn-lg: tamanho grande | rounded-pill: bordas totalmente arredondadas (cápsula) -->
+            <!-- shadow: sombra no botão -->
+
+            <!-- =========================================================================
+                 PRATICA-2: Grid com três setores (dentro do container da PRATICA-1)
+                 ========================================================================= -->
+            <div class="row g-4 mt-4">
+                <!-- row: linha do sistema de grid (12 colunas) -->
+                <!-- g-4: gutter (espaço) de 4 entre colunas -->
+                <!-- mt-4: margin-top 4 — afasta a grid do hero -->
+
+                <!-- COLUNA 1 — Setor de Pães -->
+                <div class="col-12 col-md-4">
+                    <!-- col-12: ocupa 12/12 (100%) no celular -->
+                    <!-- col-md-4: em telas ≥768px ocupa 4/12 (um terço da linha) -->
+
+                    <div class="p-4 border rounded bg-white shadow-sm h-100">
+                        <!-- p-4: padding interno 4 | border: borda fina -->
+                        <!-- rounded: cantos arredondados | bg-white: fundo branco do card -->
+                        <!-- shadow-sm: sombra pequena | h-100: altura 100% (cards alinhados) -->
+                        <h3 class="text-primary">Pães Artesanais</h3>
+                        <p class="text-muted mb-0">Fermentação natural, crocantes e macios.</p>
+                        <!-- mb-0: margin-bottom zero — remove espaço extra abaixo do parágrafo -->
+                    </div>
+                </div>
+
+                <!-- COLUNA 2 — Setor de Cafés (mesmas classes da coluna 1 — PRATICA-2) -->
+                <div class="col-12 col-md-4">
+                    <div class="p-4 border rounded bg-white shadow-sm h-100">
+                        <h3 class="text-primary">Cafés Especiais</h3>
+                        <p class="text-muted mb-0">Grãos selecionados e moídos na hora.</p>
+                    </div>
+                </div>
+
+                <!-- COLUNA 3 — Setor de Doces (mesmas classes — PRATICA-2) -->
+                <div class="col-12 col-md-4">
+                    <div class="p-4 border rounded bg-white shadow-sm h-100">
+                        <h3 class="text-primary">Doces Finos</h3>
+                        <p class="text-muted mb-0">Folhados, tortas e sonhos diários.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================================
+             PRATICA-4: Card de produto em destaque
+             ========================================================================= -->
+        <section id="cardapio" class="container pb-5">
+            <!-- id="cardapio": âncora do menu "Cardápio" e do botão "Fazer Pedido Online" -->
+            <!-- pb-5: padding-bottom 5 — espaço antes da próxima seção -->
+
+            <h2 class="text-center text-primary fw-bold mb-4">Destaque do dia</h2>
+            <!-- text-center: título centralizado | mb-4: margem abaixo do título -->
+
+            <div class="card shadow mx-auto" style="max-width: 350px;">
+                <!-- card: componente cartão Bootstrap | shadow: sombra média -->
+                <!-- mx-auto: margin horizontal auto — centraliza o card na tela -->
+                <!-- style max-width: limita largura (ajuste visual; não é classe Bootstrap) -->
+
+                <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=500&auto=format&fit=crop&q=60"
+                    class="card-img-top" alt="Croissant de chocolate">
+                <!-- card-img-top: imagem colada no topo do card, largura total -->
+
+                <div class="card-body text-center">
+                    <!-- card-body: área de texto/conteúdo do card | text-center: centraliza conteúdo -->
+
+                    <h5 class="card-title fw-bold">Croissant de Chocolate Belga</h5>
+                    <!-- card-title: estilo de título dentro do card | fw-bold: negrito -->
+
+                    <p class="card-text text-muted">Massa folhada super leve com recheio cremoso de chocolate belga 70%
+                        e raspas.</p>
+                    <!-- card-text: parágrafo padrão do card | text-muted: cor secundária -->
+
+                    <div class="mb-3">
+                        <!-- mb-3: margem abaixo antes do botão -->
+                        <span class="badge bg-success fs-5">R$ 14,90</span>
+                        <!-- badge: etiqueta compacta | bg-success: fundo verde -->
+                        <!-- fs-5: font-size 5 — preço um pouco maior -->
+                    </div>
+
+                    <a href="#contato" class="btn btn-primary w-100 fw-bold text-white">Quero Esse!</a>
+                    <!-- w-100: width 100% — botão ocupa toda a largura do card -->
+                    <!-- text-white: texto branco sobre o fundo azul do btn-primary -->
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================================
+             Seção extra no index (não existe ficheiro PRATICA separado)
+             Complementa o link "Sobre Nós" do menu — PRATICA-3
+             ========================================================================= -->
+        <section id="sobre" class="container pb-5">
+            <!-- id="sobre": âncora do link "Sobre Nós" -->
+
+            <div class="p-4 border rounded bg-white shadow-sm text-center">
+                <!-- Mesmo padrão visual dos cards da PRATICA-2: p-4, border, rounded, bg-white, shadow-sm -->
+                <h2 class="text-primary fw-bold">Sobre Nós</h2>
+                <p class="text-muted mb-0">Somos uma padaria artesanal que une tradição e tecnologia para oferecer pães,
+                    cafés e doces feitos com carinho todos os dias.</p>
+            </div>
+        </section>
+
+        <!-- =========================================================================
+             PRATICA-5: Formulário de contacto / encomendas
+             ========================================================================= -->
+        <section id="contato" class="container pb-5">
+            <!-- id="contato": âncora do menu "Contato" e do botão "Quero Esse!" -->
+
+            <div class="row justify-content-center">
+                <!-- row: linha do grid | justify-content-center: centraliza colunas na horizontal -->
+
+                <div class="col-12 col-md-8">
+                    <!-- col-12: largura total no mobile | col-md-8: 8/12 (~66%) em tablet/desktop -->
+
+                    <div class="p-4 border rounded bg-white shadow">
+                        <!-- p-4, border, rounded, bg-white: caixa branca com borda (como PRATICA-2) -->
+                        <!-- shadow: sombra um pouco maior que shadow-sm (destaque do formulário) -->
+
+                        <h3 class="text-center text-primary fw-bold mb-4">Fale com o Padeiro</h3>
+                        <!-- text-center + text-primary + fw-bold + mb-4: título centralizado e destacado -->
+
+                        <!-- action="#" method="post": exemplo de envio; required valida no navegador -->
+                        <form action="#" method="post">
+
+                            <!-- Campo: Nome -->
+                            <div class="mb-3">
+                                <!-- mb-3: espaçamento entre cada grupo label + input -->
+                                <label for="nome" class="form-label fw-bold">Seu Nome</label>
+                                <!-- form-label: estilo de rótulo Bootstrap | for="nome" liga ao id do input -->
+                                <!-- fw-bold: rótulo em negrito -->
+                                <input type="text" class="form-control" id="nome" name="nome" required
+                                    placeholder="Digite seu nome completo">
+                                <!-- form-control: campo de texto com borda e foco estilizados -->
+                                <!-- required: obrigatório antes de enviar -->
+                            </div>
+
+                            <!-- Campo: E-mail -->
+                            <div class="mb-3">
+                                <label for="email" class="form-label fw-bold">Seu E-mail</label>
+                                <input type="email" class="form-control" id="email" name="email" required
+                                    placeholder="nome@exemplo.com">
+                                <!-- type="email": validação básica de formato de e-mail -->
+                            </div>
+
+                            <!-- Campo: Mensagem -->
+                            <div class="mb-3">
+                                <label for="mensagem" class="form-label fw-bold">Qual a sua dúvida ou encomenda?</label>
+                                <textarea class="form-control" id="mensagem" name="mensagem" rows="3" required
+                                    placeholder="Quero encomendar 20 croissants..."></textarea>
+                                <!-- textarea + form-control: área de texto redimensionável estilizada -->
+                                <!-- rows="3": altura inicial de três linhas -->
+                            </div>
+
+                            <!-- Botão de envio -->
+                            <button type="submit" class="btn btn-primary w-100 text-white fw-bold shadow-sm">
+                                <!-- type="submit": envia o formulário -->
+                                <!-- w-100: largura total | shadow-sm: sombra leve no botão -->
+                                Enviar Mensagem
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- PRATICA-1: JavaScript do Bootstrap — necessário para navbar-toggler e collapse (PRATICA-3) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -3,14 +3,14 @@
     <div class="col-12 col-md-8">
         <div class="p-4 border rounded bg-white shadow">
             <h3 class="text-center text-primary fw-bold mb-4">Fale com o Padeiro </h3>
-            <form> <!-- Campo: Nome Completo -->
+            <form action="#" method="post"> <!-- Campo: Nome Completo -->
                 <div class="mb-3"> <label for="nome" class="form-label fw-bold">Seu Nome</label> <input type="text"
-                        class="form-control" id="nome" placeholder="Digite seu nome completo"> </div>
+                        class="form-control" id="nome" name="nome" required placeholder="Digite seu nome completo"> </div>
                 <!-- Campo: E-mail -->
                 <div class="mb-3"> <label for="email" class="form-label fw-bold">Seu E-mail</label> <input type="email"
-                        class="form-control" id="email" placeholder="nome@exemplo.com"> </div> <!-- Campo: Mensagem -->
+                        class="form-control" id="email" name="email" required placeholder="nome@exemplo.com"> </div> <!-- Campo: Mensagem -->
                 <div class="mb-3"> <label for="mensagem" class="form-label fw-bold">Qual a sua dúvida ou
-                        encomenda?</label> <textarea class="form-control" id="mensagem" rows="3"
+                        encomenda?</label> <textarea class="form-control" id="mensagem" name="mensagem" rows="3" required
                         placeholder="Quero encomendar 20 croissants..."></textarea> </div> <!-- Botão de Envio -->
                 <button type="submit" class="btn btn-primary w-100 text-white fw-bold shadow-sm">Enviar Mensagem
                 </button>
