@@ -1,0 +1,35 @@
+<!-- ============================================================
+     PRÁTICA 3 — Painel de contador (CSS puro + JavaScript)
+     Incrementa e zera quantidade na tela
+     ============================================================ -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 3 — Contador de Croissants</title>
+    <link rel="stylesheet" href="pratica3.css">
+</head>
+
+<body class="pratica3" style="padding: 2rem; background: #faf6f0;">
+
+    <!-- section.painel-contador: card do contador estilizado no CSS -->
+    <section class="painel-contador">
+        <h2>Encomenda de Croissants</h2>
+        <p>Selecione a quantidade desejada:</p>
+        <!-- role="status" + aria-live: leitores de tela anunciam mudanças -->
+        <div id="displayContador" class="numero-display" role="status" aria-live="polite">0</div>
+        <div>
+            <!-- id btnAdicionar: soma +1 no JS -->
+            <button type="button" id="btnAdicionar" class="btn-acao">Adicionar +1</button>
+            <!-- id btnZerar: zera o contador no JS -->
+            <button type="button" id="btnZerar" class="btn-acao btn-limpar">Zerar</button>
+        </div>
+    </section>
+
+    <script src="pratica3.js"></script>
+</body>
+
+</html>

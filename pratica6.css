@@ -1,0 +1,79 @@
+/* ============================================================
+   PRÁTICA 6 — Formulário com validação (CSS puro)
+   ============================================================ */
+
+/* Container do formulário de encomenda */
+.pratica6 #formEncomenda {
+    max-width: 28rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background: #fff;
+    border: 1px solid #e0d5c5;
+    border-radius: 0.5rem;
+}
+
+/* Cada linha do formulário */
+.pratica6 .campo-grupo {
+    margin-bottom: 1.25rem;
+    text-align: left;
+}
+
+.pratica6 label {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+}
+
+/* Inputs de texto, e-mail e número */
+.pratica6 input {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.35rem;
+    font-size: 1rem;
+}
+
+/* Campo inválido (aria-invalid="true" definido pelo JS) */
+.pratica6 input[aria-invalid="true"] {
+    border-color: #c0392b;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(192, 57, 43, 0.2);
+}
+
+/* Campo válido após correção */
+.pratica6 input[aria-invalid="false"] {
+    border-color: #27ae60;
+}
+
+/* Mensagens de erro abaixo dos campos */
+.pratica6 .msg-erro {
+    margin-top: 0.35rem;
+    font-size: 0.875rem;
+    color: #c0392b;
+}
+
+.pratica6 .msg-erro.oculto,
+.msg-erro.oculto {
+    display: none;
+}
+
+.pratica6 .msg-erro.visivel,
+.msg-erro.visivel {
+    display: block;
+}
+
+/* Botão enviar pedido */
+.pratica6 button[type="submit"] {
+    width: 100%;
+    padding: 0.65rem;
+    border: none;
+    border-radius: 0.35rem;
+    background: #8b4513;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.pratica6 button[type="submit"]:hover {
+    background: #6d3610;
+}

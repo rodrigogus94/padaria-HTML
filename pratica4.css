@@ -1,0 +1,69 @@
+/* ============================================================
+   PRÁTICA 4 — Temas claro e escuro (CSS puro)
+   ============================================================ */
+
+/* Transição suave ao trocar cores do body e do card */
+body.tema-claro,
+body.tema-escuro,
+.card-conteudo {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Tema claro aplicado no body */
+body.tema-claro {
+    background-color: #f5f0e8;
+    color: #2c1810;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+/* Tema escuro aplicado no body */
+body.tema-escuro {
+    background-color: #1e1a16;
+    color: #f0ebe3;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+/* Cabeçalho com botão de alternância */
+header {
+    margin-bottom: 1.5rem;
+}
+
+/* Botão que alterna o tema */
+#btnAlternar {
+    padding: 0.6rem 1.2rem;
+    border: 2px solid currentColor;
+    border-radius: 0.4rem;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Card no modo claro */
+body.tema-claro .card-conteudo {
+    background-color: #fff;
+    border: 1px solid #e0d5c5;
+    color: #2c1810;
+}
+
+/* Card no modo escuro */
+body.tema-escuro .card-conteudo {
+    background-color: #2a2520;
+    border: 1px solid #4a4038;
+    color: #f0ebe3;
+}
+
+/* Layout do artigo principal */
+.card-conteudo {
+    max-width: 36rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.card-conteudo h2 {
+    margin-bottom: 0.75rem;
+    color: #c4a35a;
+}

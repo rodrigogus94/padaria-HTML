@@ -1,0 +1,156 @@
+<!-- ============================================================
+     INDEX — Revisão Padaria Pão e Bytes
+     Integra as Práticas 1 a 6 (HTML + CSS + JS separados)
+     Abra este arquivo no navegador para ver tudo funcionando
+     ============================================================ -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisão — Pão e Bytes | Práticas 1 a 6</title>
+    <!-- Layout e navegação do index -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- Um CSS por prática (estilos de cada bloco) -->
+    <link rel="stylesheet" href="css/pratica1.css">
+    <link rel="stylesheet" href="css/pratica2.css">
+    <link rel="stylesheet" href="css/pratica3.css">
+    <link rel="stylesheet" href="css/pratica4.css">
+    <link rel="stylesheet" href="css/pratica5.css">
+    <link rel="stylesheet" href="css/pratica6.css">
+</head>
+
+<!-- tema-claro: estado inicial da Prática 4 no site completo -->
+<body class="tema-claro">
+
+    <!-- Menu âncora para cada seção -->
+    <nav class="nav-principal" aria-label="Menu das práticas">
+        <ul>
+            <li><a href="#pratica1">Prática 1</a></li>
+            <li><a href="#pratica2">Prática 2</a></li>
+            <li><a href="#pratica3">Prática 3</a></li>
+            <li><a href="#pratica4">Prática 4</a></li>
+            <li><a href="#pratica5">Prática 5</a></li>
+            <li><a href="#pratica6">Prática 6</a></li>
+        </ul>
+    </nav>
+
+    <header class="cabecalho-site">
+        <h1>Padaria Pão e Bytes</h1>
+        <p>Revisão — HTML, CSS puro e JavaScript (Práticas 1 a 6)</p>
+    </header>
+
+    <!-- ========== PRÁTICA 1 — Botão e alert ========== -->
+    <section id="pratica1" class="secao-pratica pratica1" aria-labelledby="titulo-p1">
+        <h2 id="titulo-p1">Prática 1 — Primeiro Script JavaScript</h2>
+        <main>
+            <h1>Padaria Pão e Bytes</h1>
+            <button type="button" id="btnMensagem">Ver Mensagem</button>
+        </main>
+        <a class="link-standalone" href="pratica1.html">Abrir só a Prática 1 →</a>
+    </section>
+
+    <!-- ========== PRÁTICA 2 — Seletores e cardápio ========== -->
+    <section id="pratica2" class="secao-pratica pratica2" aria-labelledby="titulo-p2">
+        <h2 id="titulo-p2">Prática 2 — Estrutura HTML e Seletores</h2>
+        <main style="max-width: 40rem; margin: 0 auto;">
+            <h1 id="tituloCardapio">Cardápio do Dia</h1>
+            <p class="destaque">Produtos artesanais fresquinhos</p>
+            <section>
+                <article class="card-produto">Pão Francês Integral</article>
+                <article class="card-produto">Croissant de Chocolate Belga</article>
+            </section>
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: #666; text-align: center;">
+                Abra o console (F12) para ver os logs desta prática.
+            </p>
+        </main>
+        <a class="link-standalone" href="pratica2.html">Abrir só a Prática 2 →</a>
+    </section>
+
+    <!-- ========== PRÁTICA 3 — Contador ========== -->
+    <section id="pratica3" class="secao-pratica pratica3" aria-labelledby="titulo-p3">
+        <h2 id="titulo-p3">Prática 3 — Painel Contador</h2>
+        <section class="painel-contador">
+            <h3>Encomenda de Croissants</h3>
+            <p>Selecione a quantidade desejada:</p>
+            <div id="displayContador" class="numero-display" role="status" aria-live="polite">0</div>
+            <div>
+                <button type="button" id="btnAdicionar" class="btn-acao">Adicionar +1</button>
+                <button type="button" id="btnZerar" class="btn-acao btn-limpar">Zerar</button>
+            </div>
+        </section>
+        <a class="link-standalone" href="pratica3.html">Abrir só a Prática 3 →</a>
+    </section>
+
+    <!-- ========== PRÁTICA 4 — Tema claro/escuro ========== -->
+    <section id="pratica4" class="secao-pratica" aria-labelledby="titulo-p4">
+        <h2 id="titulo-p4">Prática 4 — Modo Claro e Escuro</h2>
+        <header style="text-align: center; margin-bottom: 1rem;">
+            <button type="button" id="btnAlternar" aria-pressed="false">Ativar Modo Escuro</button>
+        </header>
+        <article class="card-conteudo">
+            <h3>Portal do Cliente — Pão e Bytes</h3>
+            <p>Acompanhe seus pedidos de encomendas. O tema altera o <strong>site inteiro</strong>.</p>
+        </article>
+        <a class="link-standalone" href="pratica4.html">Abrir só a Prática 4 →</a>
+    </section>
+
+    <!-- ========== PRÁTICA 5 — Newsletter ========== -->
+    <section id="pratica5" class="secao-pratica pratica5" aria-labelledby="titulo-p5">
+        <h2 id="titulo-p5">Prática 5 — Newsletter</h2>
+        <form id="formCadastro">
+            <fieldset>
+                <legend>Newsletter da Padaria</legend>
+                <div class="campo-grupo">
+                    <label for="inputEmail">Digite seu melhor e-mail:</label>
+                    <input type="email" id="inputEmail" name="email" required autocomplete="email">
+                </div>
+                <button type="submit">Cadastrar na Lista</button>
+            </fieldset>
+        </form>
+        <div id="mensagemSucesso" class="oculto" role="alert">Cadastro realizado!</div>
+        <a class="link-standalone" href="pratica5.html">Abrir só a Prática 5 →</a>
+    </section>
+
+    <!-- ========== PRÁTICA 6 — Validação ========== -->
+    <section id="pratica6" class="secao-pratica pratica6" aria-labelledby="titulo-p6">
+        <h2 id="titulo-p6">Prática 6 — Validação de Encomenda</h2>
+        <form id="formEncomenda" novalidate>
+            <div class="campo-grupo">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" aria-required="true" aria-describedby="erroNome">
+                <div id="erroNome" class="msg-erro oculto" role="alert">
+                    O nome deve ter pelo menos 3 caracteres.
+                </div>
+            </div>
+            <div class="campo-grupo">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" aria-required="true" aria-describedby="erroEmail">
+                <div id="erroEmail" class="msg-erro oculto" role="alert">
+                    Digite um e-mail válido contendo @ e ponto.
+                </div>
+            </div>
+            <div class="campo-grupo">
+                <label for="quantidade">Quantidade:</label>
+                <input type="number" id="quantidade" name="quantidade" min="1" step="1"
+                    aria-required="true" aria-describedby="erroQuantidade">
+                <div id="erroQuantidade" class="msg-erro oculto" role="alert">
+                    Digite uma quantidade numérica válida (maior que zero).
+                </div>
+            </div>
+            <button type="submit">Enviar Pedido</button>
+        </form>
+        <a class="link-standalone" href="pratica6.html">Abrir só a Prática 6 →</a>
+    </section>
+
+    <footer>
+        <p>Revisão Padaria Pão e Bytes — Práticas 1 a 6 · CSS puro · JavaScript</p>
+    </footer>
+
+    <!-- JavaScript unificado do index (Práticas 1 a 6) -->
+    <script src="js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+/* ============================================================
+   PRÁTICA 1 — Estilos da página inicial (CSS puro)
+   Centraliza o conteúdo e define aparência do título e botão
+   ============================================================ */
+
+/* Remove margens padrão do navegador e define fonte base */
+* {
+    box-sizing: border-box; /* padding e borda entram na largura total */
+    margin: 0; /* zera margem externa padrão */
+    padding: 0; /* zera padding padrão */
+}
+
+/* Página isolada OU seção no index */
+body.pratica1,
+.secao-pratica.pratica1 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #3d2914;
+    text-align: center;
+}
+
+/* Só na página dedicada: centraliza na tela inteira */
+body.pratica1 {
+    background-color: #faf6f0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* Área principal com largura limitada */
+body.pratica1 main,
+.secao-pratica.pratica1 main {
+    max-width: 32rem;
+    margin: 0 auto;
+}
+
+/* Título principal em destaque */
+.pratica1 h1 {
+    font-size: 2rem; /* tamanho grande */
+    margin-bottom: 1.5rem; /* espaço antes do botão */
+    color: #8b4513; /* marrom “pão” */
+}
+
+/* Botão “Ver Mensagem” */
+.pratica1 #btnMensagem {
+    font-size: 1rem; /* tamanho legível */
+    padding: 0.75rem 1.5rem; /* área clicável confortável */
+    border: none; /* remove borda padrão */
+    border-radius: 0.5rem; /* cantos arredondados */
+    background-color: #c4a35a; /* dourado */
+    color: #1a1a1a; /* texto escuro no botão */
+    cursor: pointer; /* indica que é clicável */
+    transition: background-color 0.2s ease; /* transição suave no hover */
+}
+
+/* Hover: escurece levemente o botão */
+.pratica1 #btnMensagem:hover {
+    background-color: #a88b3f;
+}
+
+/* Foco pelo teclado: contorno visível para acessibilidade */
+.pratica1 #btnMensagem:focus-visible {
+    outline: 3px solid #3d2914;
+    outline-offset: 2px;
+}

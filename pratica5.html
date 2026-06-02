@@ -1,0 +1,41 @@
+<!-- ============================================================
+     PRÁTICA 5 — Newsletter sem recarregar a página
+     preventDefault no submit + mensagem de sucesso
+     ============================================================ -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 5 — Newsletter</title>
+    <link rel="stylesheet" href="css/pratica5.css">
+</head>
+
+<body class="pratica5" style="padding: 2rem; background: #faf6f0;">
+
+    <!-- id formCadastro: capturado no JS para o evento submit -->
+    <form id="formCadastro">
+        <fieldset>
+            <!-- legend: título do grupo (sem h2 dentro — HTML válido) -->
+            <legend>Newsletter da Padaria</legend>
+            <div class="campo-grupo">
+                <!-- for liga o label ao input pelo id -->
+                <label for="inputEmail">Digite seu melhor e-mail:</label>
+                <!-- type="email" + required: validação nativa do navegador -->
+                <input type="email" id="inputEmail" name="email" required autocomplete="email">
+            </div>
+            <!-- type="submit" dispara o evento submit do form -->
+            <button type="submit">Cadastrar na Lista</button>
+        </fieldset>
+    </form>
+
+    <!-- role="alert": anuncia sucesso para leitores de tela -->
+    <!-- classes oculto/visivel controladas pelo JS (não style inline) -->
+    <div id="mensagemSucesso" class="oculto" role="alert">Cadastro realizado!</div>
+
+    <script src="js/pratica5.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!-- ============================================================
+     PRÁTICA 6 — Validação customizada de formulário
+     Nome, e-mail e quantidade antes do envio
+     ============================================================ -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 6 — Validação de Encomenda</title>
+    <link rel="stylesheet" href="css/pratica6.css">
+</head>
+
+<body class="pratica6" style="padding: 2rem; background: #faf6f0;">
+
+    <form id="formEncomenda" novalidate>
+        <div class="campo-grupo">
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" name="nome" aria-required="true" aria-describedby="erroNome">
+            <div id="erroNome" class="msg-erro oculto" role="alert">
+                O nome deve ter pelo menos 3 caracteres.
+            </div>
+        </div>
+        <div class="campo-grupo">
+            <label for="email">E-mail:</label>
+            <!-- type="email": teclado adequado em mobile (validação extra no JS) -->
+            <input type="email" id="email" name="email" aria-required="true" aria-describedby="erroEmail">
+            <div id="erroEmail" class="msg-erro oculto" role="alert">
+                Digite um e-mail válido contendo @ e ponto.
+            </div>
+        </div>
+        <div class="campo-grupo">
+            <label for="quantidade">Quantidade:</label>
+            <!-- type="number" + min: correção do type="text" original -->
+            <input type="number" id="quantidade" name="quantidade" min="1" step="1"
+                aria-required="true" aria-describedby="erroQuantidade">
+            <div id="erroQuantidade" class="msg-erro oculto" role="alert">
+                Digite uma quantidade numérica válida (maior que zero).
+            </div>
+        </div>
+        <button type="submit">Enviar Pedido</button>
+    </form>
+
+    <script src="js/pratica6.js"></script>
+</body>
+
+</html>

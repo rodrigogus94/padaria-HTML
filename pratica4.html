@@ -1,0 +1,35 @@
+<!-- ============================================================
+     PRÁTICA 4 — Temas claro e escuro (CSS + classList)
+     Alterna classes tema-claro / tema-escuro no body
+     ============================================================ -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 4 — Modo Claro e Escuro</title>
+    <link rel="stylesheet" href="css/pratica4.css">
+</head>
+
+<!-- Estado inicial: apenas tema-claro (correção: faltava estrutura html completa antes) -->
+<body class="tema-claro">
+
+    <header>
+        <!-- aria-pressed: indica se o modo escuro está ativo -->
+        <button type="button" id="btnAlternar" aria-pressed="false">Ativar Modo Escuro</button>
+    </header>
+
+    <main>
+        <!-- card-conteudo: estilos mudam conforme tema do body -->
+        <article class="card-conteudo">
+            <h2>Portal do Cliente — Pão e Bytes</h2>
+            <p>Acompanhe seus pedidos de encomendas.</p>
+        </article>
+    </main>
+
+    <script src="js/pratica4.js"></script>
+</body>
+
+</html>

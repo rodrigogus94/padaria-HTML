@@ -1,0 +1,117 @@
+/* ============================================================
+   INDEX — Layout geral e navegação entre práticas
+   Complementa os CSS individuais de cada prática
+   ============================================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    color: #2c1810;
+}
+
+/* Navegação fixa no topo */
+.nav-principal {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #3d2914;
+    padding: 0.75rem 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.nav-principal ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    justify-content: center;
+}
+
+.nav-principal a {
+    color: #f5f0e8;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.nav-principal a:hover {
+    text-decoration: underline;
+}
+
+/* Cabeçalho do site */
+.cabecalho-site {
+    text-align: center;
+    padding: 2rem 1rem 1rem;
+    background: linear-gradient(180deg, #faf6f0 0%, #f5f0e8 100%);
+}
+
+.cabecalho-site h1 {
+    color: #8b4513;
+    margin: 0 0 0.5rem;
+}
+
+.cabecalho-site p {
+    margin: 0;
+    color: #6b5344;
+}
+
+/* Cada bloco de prática */
+.secao-pratica {
+    padding: 2.5rem 1rem;
+    border-top: 3px solid #e0d5c5;
+}
+
+.secao-pratica:nth-child(even) {
+    background: #faf6f0;
+}
+
+.secao-pratica h2 {
+    text-align: center;
+    color: #8b4513;
+    margin: 0 0 1.5rem;
+}
+
+.secao-pratica .link-standalone {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: #6b5344;
+}
+
+/* Temas globais no index (Prática 4 no body) */
+body.tema-claro {
+    background-color: #f5f0e8;
+    color: #2c1810;
+}
+
+body.tema-escuro {
+    background-color: #1e1a16;
+    color: #f0ebe3;
+}
+
+body.tema-escuro .secao-pratica:nth-child(even) {
+    background: #252019;
+}
+
+body.tema-escuro .cabecalho-site {
+    background: linear-gradient(180deg, #2a2520 0%, #1e1a16 100%);
+}
+
+body.tema-escuro .nav-principal {
+    background: #0f0d0b;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: #3d2914;
+    color: #f5f0e8;
+    font-size: 0.875rem;
+}

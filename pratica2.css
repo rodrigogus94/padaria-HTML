@@ -1,0 +1,33 @@
+/* ============================================================
+   PRÁTICA 2 — Cardápio e seletores (estilos dos cards)
+   ============================================================ */
+
+/* Parágrafo com classe "destaque" usada pelo querySelector */
+.pratica2 .destaque {
+    font-style: italic; /* destaque visual em itálico */
+    color: #6b5344; /* tom mais suave */
+    margin-bottom: 1.25rem; /* espaço antes da grade de produtos */
+}
+
+/* Grade responsiva: produtos lado a lado em telas largas */
+.pratica2 section {
+    display: grid; /* layout em grade */
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); /* colunas flexíveis */
+    gap: 1rem; /* espaço entre cards */
+}
+
+/* Cada artigo de produto (classe card-produto) */
+.pratica2 .card-produto {
+    background: #fff; /* fundo branco do card */
+    border: 1px solid #e0d5c5; /* borda suave */
+    border-radius: 0.5rem; /* cantos arredondados */
+    padding: 1rem; /* espaço interno */
+    text-align: center; /* texto centralizado */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* animação no hover */
+}
+
+/* Hover: eleva levemente o card */
+.pratica2 .card-produto:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}

@@ -1,0 +1,59 @@
+/* ============================================================
+   PRÁTICA 3 — Painel contador (CSS puro)
+   ============================================================ */
+
+/* Container do painel de encomenda */
+.pratica3 .painel-contador {
+    max-width: 22rem; /* largura máxima do painel */
+    margin: 0 auto; /* centraliza horizontalmente */
+    padding: 1.5rem; /* espaço interno */
+    background: #fff; /* fundo do card */
+    border: 2px solid #c4a35a; /* borda dourada */
+    border-radius: 0.75rem; /* cantos arredondados */
+    text-align: center; /* alinha texto e número ao centro */
+}
+
+/* Título da seção */
+.pratica3 .painel-contador h2 {
+    color: #8b4513;
+    margin-bottom: 0.5rem;
+}
+
+/* Display numérico grande */
+.pratica3 .numero-display {
+    font-size: 3rem; /* número em destaque */
+    font-weight: bold; /* negrito */
+    color: #3d2914;
+    margin: 1rem 0; /* espaço acima e abaixo */
+    user-select: none; /* evita seleção acidental ao clicar */
+}
+
+/* Área dos botões em linha */
+.pratica3 .painel-contador > div:last-child {
+    display: flex; /* botões lado a lado */
+    gap: 0.75rem; /* espaço entre botões */
+    justify-content: center; /* centraliza o par de botões */
+    flex-wrap: wrap; /* quebra linha em telas estreitas */
+}
+
+/* Estilo base dos botões de ação */
+.pratica3 .btn-acao {
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+    background-color: #c4a35a;
+    color: #1a1a1a;
+}
+
+/* Botão secundário “Zerar” */
+.pratica3 .btn-limpar {
+    background-color: #e8e0d4;
+    color: #3d2914;
+}
+
+/* Hover nos botões */
+.pratica3 .btn-acao:hover {
+    filter: brightness(0.95);
+}

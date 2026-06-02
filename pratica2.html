@@ -1,0 +1,39 @@
+<!-- ============================================================
+     PRÁTICA 2 — Estrutura HTML e seletores JavaScript
+     querySelector, querySelectorAll e console.log
+     ============================================================ -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 2 — Cardápio e Seletores</title>
+    <link rel="stylesheet" href="pratica2.css">
+</head>
+
+<body class="pratica2" style="padding: 2rem; font-family: Georgia, serif;">
+
+    <!-- main: conteúdo principal semântico -->
+    <main class="container" style="max-width: 40rem; margin: 0 auto;">
+        <!-- id sem acento: evita problemas em URLs e teclados -->
+        <h1 id="tituloCardapio">Cardápio do Dia</h1>
+        <!-- classe "destaque" lida por querySelector(".destaque") -->
+        <p class="destaque">Produtos artesanais fresquinhos</p>
+        <!-- section agrupa os produtos -->
+        <section>
+            <!-- article.card-produto: cada item do cardápio -->
+            <article class="card-produto">Pão Francês Integral</article>
+            <article class="card-produto">Croissant de Chocolate Belga</article>
+            
+        </section>
+        <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
+            Abra o console (F12) para ver os logs do JavaScript.
+        </p>
+    </main>
+
+    <script src="pratica2.js"></script>
+</body>
+
+</html>
